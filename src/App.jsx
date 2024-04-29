@@ -15,6 +15,9 @@ function App() {
   const [colSpan, setColSpan] = useState(12)
   
  let paragraph = longText ? longTextPara : shortTextPara
+//  let selectedColor = longText ? "bg-blue-500 text-white" : "bg-white text-black"
+
+
  let colSpanCol = `col-span-${colSpan.toString()}`
 
  let textSpan = (colSpan === 12) ? "col-span-7" : colSpanCol
@@ -25,17 +28,20 @@ function App() {
 
   return (
     <>
-    <div className='hidden lg:block px-[15px] lg:px-[80px]'>
-        <button type='button' className='text-black bg-white px-3 py-5' onClick={() => setLongText(!longText)}>Longtext</button>
-        <button type='button' className='text-black bg-white px-3 py-5' onClick={() => setColSpan(12)}>12 col</button>
-        <button type='button' className='text-black bg-white px-3 py-5' onClick={() => setColSpan(8)}>8 col</button>
-        <button type='button' className='text-black bg-white px-3 py-5' onClick={() => setColSpan(6)}>6 col</button>
-        <button type='button' className='text-black bg-white px-3 py-5' onClick={() => setColSpan(4)}>4 col</button>
+    <div className='hidden lg:block px-[15px] lg:px-[80px] mb-14'>
+        <div className='flex justify-center items-center gap-3'>
+            <p className='font-bold mr-4'>Change Settings</p>
+            <button type='button' className="text-black bg-white px-4 py-2 hover:bg-blue-500 hover:text-white" onClick={() => setLongText(!longText)}>Longtext</button>
+            <button type='button' className='text-black bg-white px-4 py-2 hover:bg-blue-500 hover:text-white' onClick={() => setColSpan(4)}>4 col</button>
+            <button type='button' className='text-black bg-white px-4 py-2 hover:bg-blue-500 hover:text-white' onClick={() => setColSpan(6)}>6 col</button>
+            <button type='button' className='text-black bg-white px-4 py-2 hover:bg-blue-500 hover:text-white' onClick={() => setColSpan(8)}>8 col</button>
+            <button type='button' className='text-black bg-white px-4 py-2 hover:bg-blue-500 hover:text-white' onClick={() => setColSpan(12)}>12 col</button>
+        </div>
     </div>
 
     <div className='hidden lg:block bg-[black] text-[white] px-[15px] lg:px-[80px]'>
             <div className='grid grid-cols-12 col-auto gap-[30px]'>
-                        <div className={`${textSpan}  mt-6 md:mt-0`}>
+                        <div className={`${textSpan} mt-6 md:mt-0`}>
                             <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
                             <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
                             <p className='mt-4 mb-2 text-[16px] font-normal'>
@@ -48,7 +54,7 @@ function App() {
                             </div>
                         </div>
 
-                        <div className={`${imgSpan}  order-1`}>
+                        <div className={`${imgSpan} order-1`}>
                             <img src={flower} alt="flower" className="w-full" />
                         </div>
             </div>
