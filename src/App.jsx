@@ -67,7 +67,7 @@ function App() {
                 <div className='col-span-12'>
                     <div className=" grid grid-cols-12 md:gap-[30px]">
                     {/* col-span-8  */}
-                        <div className="col-span-12 md:col-span-7 mt-6 md:mt-0">
+                        <div className="col-span-12  mt-6 md:mt-0">
                             <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
                             <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
                             <p className='mt-4 mb-2 text-[16px] font-normal'>
@@ -79,7 +79,7 @@ function App() {
                                 <button className='py-1 text-[#00FFC5] mt-6 w-[180px] text-left pr-2'>Text Link</button>
                             </div>
                         </div>
-                        <div className="col-span-12 md:col-span-5 order-first md:order-1">
+                        <div className="col-span-12 order-first lg:order-1">
                             <img src={flower} alt="flower" className="w-full" />
                         </div>
                     </div>
