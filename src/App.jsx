@@ -28,6 +28,7 @@ function App() {
 
   return (
     <>
+    {/* settings section */}
     <div className='hidden lg:block px-[15px] lg:px-[80px] mb-14'>
         <div className='flex justify-center items-center gap-3'>
             <p className='font-bold mr-4'>Change Settings</p>
@@ -39,11 +40,13 @@ function App() {
         </div>
     </div>
 
+    {/* first */}
+
     <div className='hidden lg:block bg-[black] text-[white] px-[15px] lg:px-[80px]'>
-            <div className='grid grid-cols-12 col-auto gap-[30px]'>
-                        <div className={`${textSpan} mt-6 md:mt-0`}>
-                            <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
-                            <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
+        <div className='grid grid-cols-12 col-auto gap-[30px]'>
+            <div className={`${textSpan} mt-6 md:mt-0`}>
+                <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
+                <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
                             <p className='mt-4 mb-2 text-[16px] font-normal'>
                                 {paragraph}
                             </p>
@@ -57,8 +60,8 @@ function App() {
                         <div className={`${imgSpan} order-1`}>
                             <img src={flower} alt="flower" className="w-full" />
                         </div>
-            </div>
         </div>
+    </div>
 
         {/* second */}
 
