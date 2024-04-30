@@ -18,10 +18,50 @@ function App() {
 
  let colSpanCol = `col-span-${colSpan.toString()}`
 
- let textSpan = (colSpan === 12) ? "col-span-7" : ""
- let imgSpan = (colSpan === 12) ? "col-span-5" : ""
+ let textSpan = (colSpan === 12) ? "col-span-7" : `${colSpanCol}`
+ let imgSpan = (colSpan === 12) ? "col-span-5" : `${colSpanCol}`
 
- let columnFlex = (colSpan === 12) ? `flex flex-row col-span-12` : `flex flex-col ${colSpanCol}`
+ let twelveCol = (<div className='grid grid-cols-12 gap-[30px]'>
+    <div className={`${textSpan} mt-6`}>
+                                <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
+                                <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
+                                <p className='mt-4 mb-2 text-[16px] font-normal'>
+                                    {paragraph}
+                                </p>
+                                <p className='mt-3 text-[14px]'>Read More</p>
+                                <div className='flex flex-col min-[376px]:flex-row gap-6'>
+                                    <button className='py-1 text-[#00FFC5] mt-6 w-[180px] text-left pr-2'>Text Link</button>
+                                    <button className='py-1 text-[#00FFC5] mt-6 w-[180px] text-left pr-2'>Text Link</button>
+                                </div>
+                </div>
+
+                <div className={`${imgSpan} order-1`}>
+                                <img src={flower} alt="flower" className="w-full" />
+                </div>
+ </div>)
+
+ let othersCol = (<div className='grid grid-cols-12 gap-[30px]'>
+<div className={`${colSpanCol}`}>
+                <div className={`${textSpan} mt-6`}>
+                                <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
+                                <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
+                                <p className='mt-4 mb-2 text-[16px] font-normal'>
+                                    {paragraph}
+                                </p>
+                                <p className='mt-3 text-[14px]'>Read More</p>
+                                <div className='flex flex-col min-[376px]:flex-row gap-6'>
+                                    <button className='py-1 text-[#00FFC5] mt-6 w-[180px] text-left pr-2'>Text Link</button>
+                                    <button className='py-1 text-[#00FFC5] mt-6 w-[180px] text-left pr-2'>Text Link</button>
+                                </div>
+                </div>
+
+                <div className={`${imgSpan} order-1`}>
+                                <img src={flower} alt="flower" className="w-full" />
+                </div>
+            </div>
+ </div>)
+
+//  let columnFlex = (colSpan === 12) ? `flex flex-row col-span-12` : `flex flex-col ${colSpanCol}`
 
 //  let displayItem = (colSpan === 12) ? 
 //  (<div className='hidden lg:block bg-[black] text-[white] px-[15px] lg:px-[80px]'>
@@ -85,14 +125,12 @@ function App() {
     {/* {displayItem} */}
 
     <div className='hidden lg:block bg-[black] text-[white] px-[15px] lg:px-[80px]'>
-
+        {(colSpan === 12 ? twelveCol : othersCol)}
         
-        <div className='grid grid-cols-12 gap-[30px]'>
+        {/* <div className='grid grid-cols-12 gap-[30px]'>
 
             <div className={`${columnFlex}`}>
-            {/* className={`${columnFlex}`} */}
                 <div className={`${textSpan} mt-6`}>
-                {/* className={`${textSpan} mt-6 `} */}
                             <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
                             <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
                             <p className='mt-4 mb-2 text-[16px] font-normal'>
@@ -106,29 +144,30 @@ function App() {
                         </div>
 
                         <div className={`${imgSpan} order-1`}>
-                        {/* className={`${imgSpan} order-1`} */}
                             <img src={flower} alt="flower" className="w-full" />
                         </div>
             </div> 
                 
-            {/* <div className={`${textSpan} mt-6`}>
-                            <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
-                            <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
-                            <p className='mt-4 mb-2 text-[16px] font-normal'>
-                                {paragraph}
-                            </p>
-                            <p className='mt-3 text-[14px]'>Read More</p>
-                            <div className='flex flex-col min-[376px]:flex-row gap-6'>
-                                <button className='py-1 text-[#00FFC5] mt-6 w-[180px] text-left pr-2'>Text Link</button>
-                                <button className='py-1 text-[#00FFC5] mt-6 w-[180px] text-left pr-2'>Text Link</button>
-                            </div>
+            <div className={`${colSpanCol}`}>
+                <div className={`${textSpan} mt-6`}>
+                                <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
+                                <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
+                                <p className='mt-4 mb-2 text-[16px] font-normal'>
+                                    {paragraph}
+                                </p>
+                                <p className='mt-3 text-[14px]'>Read More</p>
+                                <div className='flex flex-col min-[376px]:flex-row gap-6'>
+                                    <button className='py-1 text-[#00FFC5] mt-6 w-[180px] text-left pr-2'>Text Link</button>
+                                    <button className='py-1 text-[#00FFC5] mt-6 w-[180px] text-left pr-2'>Text Link</button>
+                                </div>
+                </div>
+
+                <div className={`${imgSpan} order-1`}>
+                                <img src={flower} alt="flower" className="w-full" />
+                </div>
             </div>
 
-            <div className={`${imgSpan} order-1`}>
-                            <img src={flower} alt="flower" className="w-full" />
-            </div> */}
-
-        </div>
+        </div> */}
     </div>
 
         {/* second */}
