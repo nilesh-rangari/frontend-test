@@ -23,7 +23,7 @@ let colNo = colSpan.toString()
   };
 
  let twelveCol = (<div className='grid grid-cols-12 gap-[30px]'>
-                        <div className={`${textSpan} mt-6`}>
+                        <div className={`${textSpan}`}>
                                 <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
                                 <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
                                 <p className='mt-4 mb-2 text-[16px] font-normal'>
@@ -43,7 +43,7 @@ let colNo = colSpan.toString()
 
  let othersCol = (<div className='grid grid-cols-12 gap-[30px]'>
                     <div className="" style={divStyle} >
-                                    <div className={`mt-6`}>
+                                    <div className="">
                                                     <h1 className="text-[28px] md:text-[32px] mb-2 font-bold">Title Text 2 (Module Title)</h1>
                                                     <h2 className="my-2 text-[20px] md:text-24px font-normal">Caption or Subtitle of Module</h2>
                                                     <p className='mt-4 mb-2 text-[16px] font-normal'>
@@ -56,7 +56,7 @@ let colNo = colSpan.toString()
                                                     </div>
                                     </div>
 
-                                    <div className={`order-1`}>
+                                    <div className={`order-1 mt-6`}>
                                                     <img src={flower} alt="flower" className="w-full" />
                                     </div>
                                 </div>
